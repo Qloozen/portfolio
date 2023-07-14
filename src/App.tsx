@@ -1,9 +1,12 @@
 import "./App.css";
+import About from "./sections/About";
+import Home from "./sections/Home";
 
 function App() {
   return (
     <>
-      <h1>Portfolio</h1>
+      <Home />
+      <About></About>
     </>
   );
 }

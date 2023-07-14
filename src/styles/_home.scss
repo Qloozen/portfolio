@@ -1,0 +1,40 @@
+.home-container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.home-content {
+  flex: 2;
+  display: flex;
+}
+
+.arrow-down {
+  flex: 1;
+  text-align: center;
+}
+
+.home-information {
+  flex: 2 1 40rem;
+  padding: 0rem 5rem 0rem 5rem;
+  h2 {
+    font-size: 5rem;
+    padding: 2rem 0rem 2rem 0rem;
+  }
+  button {
+    margin-top: 10rem;
+    background: transparent;
+    border: 2px solid $accent-color;
+    border-radius: 0.5rem;
+    padding: 1rem 2rem 1rem 2rem;
+    color: white;
+  }
+}
+.home-image {
+  flex: 2 1 40rem;
+}
+.home-social {
+  flex: 1 1 3rem;
+  @include flex(center, center, column);
+  gap: 2rem;
+}
