@@ -5,6 +5,7 @@ $header4: 2rem;
 $text: 1.6rem;
 $gradient: linear-gradient(to left, #38d39f, #28a4d3);
 $background-color: #14141b;
+$secondary-background: #252531;
 $accent-color: #38d39f;
 $gray-text: #2c2c2c;
 
@@ -18,3 +19,4 @@ $gray-text: #2c2c2c;
 @import "global";
 @import "home";
 @import "navbar";
+@import "about";

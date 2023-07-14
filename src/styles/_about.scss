@@ -1,0 +1,31 @@
+.about-container {
+  display: flex;
+  align-content: center;
+  flex-wrap: wrap;
+  padding: 5rem;
+  min-height: 60vh;
+  background-color: $secondary-background;
+  svg {
+    position: absolute;
+    left: 0;
+    z-index: 1;
+  }
+}
+
+.code-description {
+  z-index: 2;
+  flex: 1 1 20rem;
+  img {
+    width: 700px;
+    object-fit: cover;
+  }
+}
+
+.about-text {
+  flex: 1 1 20rem;
+  padding-left: 5rem;
+  h2 {
+    padding-bottom: 5rem;
+  }
+  z-index: 2;
+}
