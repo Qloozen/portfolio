@@ -5,25 +5,55 @@ import linkedIn from "../assets/icons/linkedin.svg";
 
 type Props = {};
 
+const fadeIn = {
+  hidden: {
+    opacity: 0,
+    y: 200,
+  },
+  show: {
+    opacity: 1,
+    y: 0,
+    transition: {
+      duration: 1,
+      ease: "easeOut",
+    },
+  },
+};
+
+const scaleAnim = {
+  hidden: {
+    opacity: 0,
+    scale: 0,
+  },
+  show: {
+    opacity: 1,
+    scale: 1,
+    transition: {
+      duration: 0.75,
+    },
+  },
+};
+
 const Home = (props: Props) => {
   return (
     <div className="home-container">
       <div className="home-content">
         <div className="home-information">
-          <p>Hello, my name is</p>
-          <h2>
+          <motion.p variants={fadeIn}>Hello, my name is</motion.p>
+          <motion.h2 variants={fadeIn}>
             Qiang <br /> Loozen
-          </h2>
-          <h4>Software engineer student</h4>
-          <button>Get in touch</button>
+          </motion.h2>
+          <motion.h4 variants={fadeIn}>Software engineer student</motion.h4>
+          <motion.button variants={fadeIn}>Get in touch</motion.button>
         </div>
         <div className="home-image">
-          <svg
+          <motion.svg
             width="787"
             height="573"
             viewBox="0 0 787 573"
             fill="none"
             xmlns="http://www.w3.org/2000/svg"
+            variants={scaleAnim}
           >
             <g id="programming" clip-path="url(#clip0_1_2)">
               <path
@@ -578,7 +608,7 @@ const Home = (props: Props) => {
                 <rect width="786.82" height="572.258" fill="white" />
               </clipPath>
             </defs>
-          </svg>
+          </motion.svg>
         </div>
         <div className="home-social">
           <svg
