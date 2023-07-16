@@ -3,6 +3,7 @@ import About from "./sections/About";
 import Home from "./sections/Home";
 import Navbar from "./components/Navbar";
 import { motion } from "framer-motion";
+import Experience from "./sections/Experience";
 
 const fadeIn = {
   hidden: {
@@ -22,7 +23,8 @@ function App() {
     <motion.div variants={fadeIn} animate="show" initial="hidden">
       <Navbar />
       <Home />
-      <About></About>
+      <About />
+      <Experience />
     </motion.div>
   );
 }

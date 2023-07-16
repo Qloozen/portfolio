@@ -2,16 +2,12 @@ import React from "react";
 import code from "../assets/images/code.png";
 import { Variants, motion } from "framer-motion";
 import Reveal from "../components/Reveal";
+import RevealContainer from "../components/RevealContainer";
 type Props = {};
 
 const About = (props: Props) => {
   return (
-    <motion.div
-      className="about-container"
-      initial="offscreen"
-      whileInView="onscreen"
-      viewport={{ once: false, amount: 0.5 }}
-    >
+    <RevealContainer className="about-container">
       <Reveal className="code-description">
         <img src={code} alt="code description" />
       </Reveal>
@@ -41,7 +37,7 @@ const About = (props: Props) => {
             onscreen: {
               opacity: 1,
               transition: {
-                duration: 2,
+                duration: 1.5,
               },
               pathLength: 1,
               pathOffset: 0,
@@ -53,7 +49,7 @@ const About = (props: Props) => {
           strokeWidth="10"
         />
       </motion.svg>
-    </motion.div>
+    </RevealContainer>
   );
 };
 
