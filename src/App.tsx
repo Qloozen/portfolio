@@ -4,6 +4,7 @@ import Home from "./sections/Home";
 import Navbar from "./components/Navbar";
 import { motion } from "framer-motion";
 import Experience from "./sections/Experience";
+import Projects from "./sections/Projects";
 
 const fadeIn = {
   hidden: {
@@ -25,6 +26,7 @@ function App() {
       <Home />
       <About />
       <Experience />
+      <Projects />
     </motion.div>
   );
 }
