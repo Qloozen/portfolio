@@ -12,42 +12,47 @@ const Experience = (props: Props) => {
   return (
     <RevealContainer className="experience-container">
       <Reveal>
-        <ExperienceCard
-          img={FrontEnd}
-          title={"Front-end"}
-          items={[
-            "HTML",
-            "CSS",
-            "SASS",
-            "Javascript",
-            "Typescript",
-            "React",
-            "Redux Toolkit",
-            "Angular",
-          ]}
-        />
+        <h2>Technologies I am familiar with</h2>
       </Reveal>
-      <Reveal>
-        <ExperienceCard
-          img={BackEnd}
-          title={"Back-end"}
-          items={[
-            "Node.js",
-            "Express",
-            "NEST.js",
-            ".NET API",
-            "SQL",
-            "MongoDB",
-          ]}
-        />
-      </Reveal>
-      <Reveal>
-        <ExperienceCard
-          img={Mobile}
-          title={"Mobile"}
-          items={["React Native", "SwiftUI", "Jetpack Compose"]}
-        />
-      </Reveal>
+      <div className="experience-cards">
+        <Reveal>
+          <ExperienceCard
+            img={FrontEnd}
+            title={"Front-end"}
+            items={[
+              "HTML",
+              "CSS",
+              "SASS",
+              "Javascript",
+              "Typescript",
+              "React",
+              "Redux Toolkit",
+              "Angular",
+            ]}
+          />
+        </Reveal>
+        <Reveal>
+          <ExperienceCard
+            img={BackEnd}
+            title={"Back-end"}
+            items={[
+              "Node.js",
+              "Express",
+              "NEST.js",
+              ".NET API",
+              "SQL",
+              "MongoDB",
+            ]}
+          />
+        </Reveal>
+        <Reveal>
+          <ExperienceCard
+            img={Mobile}
+            title={"Mobile"}
+            items={["React Native", "SwiftUI", "Jetpack Compose"]}
+          />
+        </Reveal>
+      </div>
     </RevealContainer>
   );
 };
