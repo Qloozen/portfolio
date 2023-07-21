@@ -1,18 +1,11 @@
 import React, { useState } from "react";
+import { Project } from "../models/ProjectModel";
 
-type Props = {};
+type Props = {
+  project: Project;
+};
 
-const ProjectCard = (props: Props) => {
-  const [tags, setTags] = useState([
-    "SQL",
-    "Angular",
-    ".NET",
-    "GraphQL",
-    "SQL",
-    "Angular",
-    ".NET",
-    "GraphQL",
-  ]);
+const ProjectCard = ({ project }: Props) => {
   return (
     <div className="project-card-container">
       <img
@@ -20,16 +13,14 @@ const ProjectCard = (props: Props) => {
         alt=""
       />
       <div className="project-card-content">
-        <h4>Project</h4>
-        <p>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Commodi,
-          alias. Lorem ipsum dolor sit amet consectetur adipisicing elit.
-          Commodi, alias.
-        </p>
+        <h4>{project.name}</h4>
+        <p>{project.description}</p>
         <div className="tag-container">
-          {tags.map((tag) => {
-            return <span className="tag">{tag}</span>;
-          })}
+          {project.tags.map((tag) => (
+            <span className="tag" key={tag}>
+              {tag}
+            </span>
+          ))}
         </div>
       </div>
     </div>

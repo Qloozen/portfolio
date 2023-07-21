@@ -5,6 +5,9 @@ import Navbar from "./components/Navbar";
 import { motion } from "framer-motion";
 import Experience from "./sections/Experience";
 import Projects from "./sections/Projects";
+import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
+
+const queryClient = new QueryClient();
 
 const fadeIn = {
   hidden: {
@@ -21,13 +24,15 @@ const fadeIn = {
 
 function App() {
   return (
-    <motion.div variants={fadeIn} animate="show" initial="hidden">
-      <Navbar />
-      <Home />
-      <About />
-      <Experience />
-      <Projects />
-    </motion.div>
+    <QueryClientProvider client={queryClient}>
+      <motion.div variants={fadeIn} animate="show" initial="hidden">
+        <Navbar />
+        <Home />
+        <About />
+        <Experience />
+        <Projects />
+      </motion.div>
+    </QueryClientProvider>
   );
 }
 

@@ -1,5 +1,5 @@
 .projects-container {
-  @include flex(space-between, center, column);
+  @include flex(flex-start, center, column);
   min-height: 100vh;
   padding: 10rem;
   h2 {
@@ -12,10 +12,11 @@
   flex-wrap: wrap;
   width: 70%;
   gap: 5rem;
+  margin-top: 5rem;
 }
 
 .project-card-container {
-  @include flex(space-between, center, column);
+  @include flex(flex-start, center, column);
   background: $secondary-background;
   width: 300px;
   height: 400px;

@@ -14,7 +14,7 @@ const ExperienceCard = ({ img, items, title }: Props) => {
       <p>Worked with</p>
       <ul>
         {items.map((i) => (
-          <li>{i}</li>
+          <li key={i}>{i}</li>
         ))}
       </ul>
     </div>
