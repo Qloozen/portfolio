@@ -2,7 +2,7 @@ import ProjectCard from "../components/ProjectCard";
 import RevealContainer from "../components/RevealContainer";
 import Reveal from "../components/Reveal";
 import { useQuery } from "@tanstack/react-query";
-import { fetchProjects } from "../api/Project";
+import { fetchProjects } from "../api/Api";
 
 type Props = {};
 
@@ -12,7 +12,6 @@ const Projects = (props: Props) => {
     queryFn: () => fetchProjects(),
   });
 
-  console.log(data);
   return (
     <RevealContainer className="projects-container">
       <Reveal>

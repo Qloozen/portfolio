@@ -1,4 +1,4 @@
-import { ResponseCollection, ResponseObject } from "./StrapiReponse";
+import { ImageResponse, ResponseCollection } from "./StrapiReponse";
 
 export type Project = {
   id: number;
@@ -9,12 +9,6 @@ export type Project = {
   thumbnail: string;
   //   media: string[];
 };
-
-type ImageResponse = ResponseObject<{
-  name: string;
-  alternativeText: string | undefined;
-  url: string;
-}>;
 
 export type ProjectResponse = ResponseCollection<
   Omit<Project, "id" | "tags" | "thumbnail"> & {

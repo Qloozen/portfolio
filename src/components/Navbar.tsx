@@ -1,13 +1,29 @@
-import React from "react";
+import { useQuery } from "@tanstack/react-query";
+import { fetchProfile } from "../api/Api";
+import { motion } from "framer-motion";
 
 type Props = {};
 
 const Navbar = (props: Props) => {
+  const { data } = useQuery({
+    queryKey: ["profile"],
+    queryFn: () => fetchProfile(),
+  });
+
   return (
     <div className="nav-container">
       <nav>
         <div className="logo">
-          <p>Img</p>
+          <motion.img
+            src={data?.imageUrl}
+            alt={data?.alt}
+            initial={{ scale: 1 }}
+            whileHover={{
+              scale: 3,
+              y: 50,
+            }}
+            transition={{ duration: 0.25 }}
+          />
           <h2>
             &lt;<span>Qiang</span>/&gt;
           </h2>

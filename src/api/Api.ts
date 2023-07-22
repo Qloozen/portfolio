@@ -1,5 +1,7 @@
 import axios from "axios";
 import { Project, ProjectResponse } from "../models/ProjectModel";
+import { ImageResponse } from "../models/StrapiReponse";
+import { ProfileModel, ProfileResponse } from "../models/ProfileModel";
 
 export const BASE_URL = "https://portfolio-cms.qloozen.nl";
 
@@ -9,9 +11,6 @@ export const fetchProjects = (): Promise<Project[]> => {
     .then((res) => {
       const response = res.data.data;
       const projects = response.map((project) => {
-        console.log({
-          img: project.attributes.thumbnail.data.attributes.url,
-        });
         return {
           id: project.id,
           name: project.attributes.name,
@@ -23,5 +22,19 @@ export const fetchProjects = (): Promise<Project[]> => {
         };
       });
       return projects;
+    });
+};
+
+export const fetchProfile = (): Promise<ProfileModel> => {
+  return axios
+    .get<ProfileResponse>(`${BASE_URL}/api/profile?populate=*`)
+    .then((res) => {
+      const { url, alternativeText } =
+        res.data.data.attributes.picture.data.attributes;
+
+      return {
+        imageUrl: BASE_URL + url,
+        alt: alternativeText,
+      };
     });
 };
