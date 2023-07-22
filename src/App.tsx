@@ -6,6 +6,7 @@ import { motion } from "framer-motion";
 import Experience from "./sections/Experience";
 import Projects from "./sections/Projects";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
+import Contact from "./sections/Contact";
 
 const queryClient = new QueryClient();
 
@@ -31,6 +32,7 @@ function App() {
         <About />
         <Experience />
         <Projects />
+        <Contact />
       </motion.div>
     </QueryClientProvider>
   );
