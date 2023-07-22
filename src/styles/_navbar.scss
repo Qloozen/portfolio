@@ -22,6 +22,9 @@ nav {
 .logo {
   flex: 1;
   @include flex(flex-start, center, row);
+  h2 {
+    color: white;
+  }
   p {
     margin-right: 2rem;
   }

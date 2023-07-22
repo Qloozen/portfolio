@@ -24,19 +24,21 @@ const Navbar = (props: Props) => {
             }}
             transition={{ duration: 0.25 }}
           />
-          <h2>
-            &lt;<span>Qiang</span>/&gt;
-          </h2>
+          <a href="#">
+            <h2>
+              &lt;<span>Qiang</span>/&gt;
+            </h2>
+          </a>
         </div>
 
         <ul className="nav-items">
           <li>
-            <a href="#">
+            <a href="#about-section">
               <span>01 </span> About
             </a>
           </li>
           <li>
-            <a href="#">
+            <a href="#projects-section">
               <span>02 </span> Projects
             </a>
           </li>
