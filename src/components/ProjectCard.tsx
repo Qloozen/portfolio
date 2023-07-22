@@ -8,10 +8,7 @@ type Props = {
 const ProjectCard = ({ project }: Props) => {
   return (
     <div className="project-card-container">
-      <img
-        src="https://punt.avans.nl/app/uploads/2021/11/bress_breda.jpg"
-        alt=""
-      />
+      <img src={project.thumbnail} alt="" />
       <div className="project-card-content">
         <h4>{project.name}</h4>
         <p>{project.description}</p>

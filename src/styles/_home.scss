@@ -42,4 +42,8 @@
   padding-right: 2rem;
   @include flex(center, flex-end, column);
   gap: 2rem;
+  position: fixed;
+  right: 0;
+  top: 50%;
+  transform: translate(0, -50%);
 }

@@ -12,6 +12,7 @@ const Projects = (props: Props) => {
     queryFn: () => fetchProjects(),
   });
 
+  console.log(data);
   return (
     <RevealContainer className="projects-container">
       <Reveal>
