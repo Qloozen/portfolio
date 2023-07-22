@@ -1,5 +1,7 @@
 import React, { useState } from "react";
 import { Project } from "../models/ProjectModel";
+import { motion } from "framer-motion";
+import { HoverScaleVariant } from "../Animations";
 
 type Props = {
   project: Project;
@@ -7,7 +9,16 @@ type Props = {
 
 const ProjectCard = ({ project }: Props) => {
   return (
-    <div className="project-card-container">
+    <motion.div
+      className="project-card-container"
+      initial={{ scale: 1 }}
+      whileHover={{
+        scale: 1.025,
+      }}
+      transition={{
+        duration: 0.25,
+      }}
+    >
       <img src={project.thumbnail} alt="" />
       <div className="project-card-content">
         <h4>{project.name}</h4>
@@ -20,7 +31,7 @@ const ProjectCard = ({ project }: Props) => {
           ))}
         </div>
       </div>
-    </div>
+    </motion.div>
   );
 };
 
