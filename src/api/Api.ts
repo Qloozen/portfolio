@@ -2,6 +2,7 @@ import axios from "axios";
 import { Project, ProjectResponse } from "../models/ProjectModel";
 import { ImageResponse } from "../models/StrapiReponse";
 import { ProfileModel, ProfileResponse } from "../models/ProfileModel";
+import { AboutModel, AboutResponse } from "../models/AboutModel";
 
 export const BASE_URL = "https://portfolio-cms.qloozen.nl";
 
@@ -37,4 +38,10 @@ export const fetchProfile = (): Promise<ProfileModel> => {
         alt: alternativeText,
       };
     });
+};
+
+export const fetchAbout = (): Promise<AboutModel> => {
+  return axios
+    .get<AboutResponse>(`${BASE_URL}/api/about?populate=*`)
+    .then((res) => ({ about: res.data.data.attributes.about }));
 };

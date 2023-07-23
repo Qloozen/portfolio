@@ -1,4 +1,4 @@
-import React, { ReactNode } from "react";
+import { ReactNode } from "react";
 import { Variants, motion } from "framer-motion";
 
 type Props = {

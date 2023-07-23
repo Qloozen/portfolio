@@ -2,9 +2,7 @@ import { useQuery } from "@tanstack/react-query";
 import { fetchProfile } from "../api/Api";
 import { motion } from "framer-motion";
 
-type Props = {};
-
-const Navbar = (props: Props) => {
+const Navbar = () => {
   const { data } = useQuery({
     queryKey: ["profile"],
     queryFn: () => fetchProfile(),

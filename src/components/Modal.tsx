@@ -1,4 +1,4 @@
-import { MotionProps, motion } from "framer-motion";
+import { motion } from "framer-motion";
 import Backdrop from "./Backdrop";
 import { Project } from "../models/ProjectModel";
 import ReactMarkdown from "react-markdown";

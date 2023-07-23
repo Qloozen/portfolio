@@ -4,9 +4,7 @@ import Reveal from "../components/Reveal";
 import { useQuery } from "@tanstack/react-query";
 import { fetchProjects } from "../api/Api";
 
-type Props = {};
-
-const Projects = (props: Props) => {
+const Projects = () => {
   const { data } = useQuery({
     queryKey: ["project"],
     queryFn: () => fetchProjects(),

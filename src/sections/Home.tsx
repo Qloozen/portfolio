@@ -1,10 +1,5 @@
-import React from "react";
 import { motion } from "framer-motion";
-import github from "../assets/icons/github.svg";
-import linkedIn from "../assets/icons/linkedin.svg";
 import { HoverScaleVariant } from "../Animations";
-
-type Props = {};
 
 const fadeIn = {
   hidden: {
@@ -35,7 +30,7 @@ const scaleAnim = {
   },
 };
 
-const Home = (props: Props) => {
+const Home = () => {
   return (
     <div className="home-container">
       <div className="home-content">

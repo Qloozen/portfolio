@@ -1,11 +1,16 @@
-import React from "react";
 import code from "../assets/images/code.png";
-import { Variants, motion } from "framer-motion";
+import { motion } from "framer-motion";
 import Reveal from "../components/Reveal";
 import RevealContainer from "../components/RevealContainer";
-type Props = {};
+import { useQuery } from "@tanstack/react-query";
+import { fetchAbout } from "../api/Api";
 
-const About = (props: Props) => {
+const About = () => {
+  const { data } = useQuery({
+    queryKey: ["about"],
+    queryFn: () => fetchAbout(),
+  });
+
   return (
     <div id="about-section">
       <RevealContainer className="about-container">
@@ -14,14 +19,7 @@ const About = (props: Props) => {
         </Reveal>
         <Reveal className="about-text">
           <h2>About me</h2>
-          <p>
-            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quasi
-            dolor veniam voluptas esse quos necessitatibus ratione praesentium
-            illo odio iusto eum nemo earum placeat quibusdam tempora incidunt
-            vitae ut fugiat, corrupti quas blanditiis magni excepturi
-            architecto! Incidunt expedita quaerat natus cumque autem commodi
-            rerum neque numquam pariatur. Maiores, consequatur deserunt.
-          </p>
+          <p>{data?.about}</p>
         </Reveal>
         <motion.svg
           viewBox="0 0 1440 363"

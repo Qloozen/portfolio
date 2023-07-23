@@ -1,14 +1,11 @@
-import React from "react";
 import ExperienceCard from "../components/ExperienceCard";
 import FrontEnd from "../assets/icons/frontend.png";
 import BackEnd from "../assets/icons/backend.png";
 import Mobile from "../assets/icons/mobile.png";
-import { motion } from "framer-motion";
 import Reveal from "../components/Reveal";
 import RevealContainer from "../components/RevealContainer";
-type Props = {};
 
-const Experience = (props: Props) => {
+const Experience = () => {
   return (
     <RevealContainer className="experience-container">
       <Reveal>
