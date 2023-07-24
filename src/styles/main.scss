@@ -16,6 +16,7 @@ $gray-text: #2c2c2c;
   flex-direction: $direction;
 }
 
+@import "media-queries";
 @import "global";
 @import "home";
 @import "navbar";
@@ -24,3 +25,43 @@ $gray-text: #2c2c2c;
 @import "projects";
 @import "modal";
 @import "contact";
+
+// @media screen and (max-width: 915px) {
+//   .home-image {
+//     display: none;
+//   }
+// }
+
+// @media screen and (max-width: 750px) {
+//   .arrow-down {
+//     display: none;
+//   }
+//   .home-social {
+//     display: none;
+//   }
+//   .code-description {
+//     text-align: center;
+//     img {
+//       width: 500px;
+//     }
+//   }
+//   .about-text {
+//     h2 {
+//       text-align: center;
+//     }
+//   }
+// }
+
+// @media screen and (max-width: 400px) {
+//   .about-text {
+//     padding: 0;
+//   }
+//   .code-description {
+//     display: none;
+//   }
+//   .about-container {
+//     svg {
+//       display: none;
+//     }
+//   }
+// }

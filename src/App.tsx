@@ -26,7 +26,12 @@ const fadeIn = {
 function App() {
   return (
     <QueryClientProvider client={queryClient}>
-      <motion.div variants={fadeIn} animate="show" initial="hidden">
+      <motion.div
+        className="app-container"
+        variants={fadeIn}
+        animate="show"
+        initial="hidden"
+      >
         <Navbar />
         <Home />
         <About />

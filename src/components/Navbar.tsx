@@ -1,12 +1,27 @@
 import { useQuery } from "@tanstack/react-query";
 import { fetchProfile } from "../api/Api";
 import { motion } from "framer-motion";
+import { HamburgerMenu } from "./Hamburger";
+import { useState } from "react";
 
 const Navbar = () => {
   const { data } = useQuery({
     queryKey: ["profile"],
     queryFn: () => fetchProfile(),
   });
+
+  const [isOpen, setOpen] = useState(false);
+  const closeMenu = () => setOpen(false);
+  const variant = isOpen ? "opened" : "closed";
+
+  const navAnimation = {
+    closed: {
+      y: "-100%",
+    },
+    opened: {
+      y: 0,
+    },
+  };
 
   return (
     <div className="nav-container">
@@ -29,23 +44,30 @@ const Navbar = () => {
           </a>
         </div>
 
-        <ul className="nav-items">
+        <motion.ul
+          className="nav-items"
+          animate={variant}
+          initial="closed"
+          variants={navAnimation}
+          transition={{ type: "tween", duration: 0.25 }}
+        >
           <li>
-            <a href="#about-section">
+            <a href="#about-section" onClick={closeMenu}>
               <span>01 </span> About
             </a>
           </li>
           <li>
-            <a href="#projects-section">
+            <a href="#projects-section" onClick={closeMenu}>
               <span>02 </span> Projects
             </a>
           </li>
           <li>
-            <a href="#">
+            <a href="#contact-section" onClick={closeMenu}>
               <span>03 </span> Contact
             </a>
           </li>
-        </ul>
+        </motion.ul>
+        <HamburgerMenu isOpen={isOpen} onClick={() => setOpen(!isOpen)} />
       </nav>
     </div>
   );

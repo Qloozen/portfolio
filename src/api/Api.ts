@@ -1,6 +1,5 @@
 import axios from "axios";
 import { Project, ProjectResponse } from "../models/ProjectModel";
-import { ImageResponse } from "../models/StrapiReponse";
 import { ProfileModel, ProfileResponse } from "../models/ProfileModel";
 import { AboutModel, AboutResponse } from "../models/AboutModel";
 
