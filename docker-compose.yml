@@ -1,0 +1,14 @@
+version: "3.8"
+services:
+  portfolio-website:
+    build: .
+    container_name: portfolio-website
+    restart: unless-stopped
+    ports:
+      - "1234:8000"
+    pull_policy: build
+
+networks:
+  default:
+    name: nginxproxymanager_default
+    external: true
