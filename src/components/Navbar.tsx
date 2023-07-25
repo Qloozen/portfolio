@@ -9,19 +9,8 @@ const Navbar = () => {
     queryKey: ["profile"],
     queryFn: () => fetchProfile(),
   });
-
   const [isOpen, setOpen] = useState(false);
   const closeMenu = () => setOpen(false);
-  const variant = isOpen ? "opened" : "closed";
-
-  const navAnimation = {
-    closed: {
-      y: "-100%",
-    },
-    opened: {
-      y: 0,
-    },
-  };
 
   return (
     <div className="nav-container">
@@ -31,7 +20,7 @@ const Navbar = () => {
             src={data?.imageUrl}
             alt={data?.alt}
             initial={{ scale: 1 }}
-            whileHover={{
+            whileTap={{
               scale: 3,
               y: 50,
             }}
@@ -44,13 +33,7 @@ const Navbar = () => {
           </a>
         </div>
 
-        <motion.ul
-          className="nav-items"
-          animate={variant}
-          initial="closed"
-          variants={navAnimation}
-          transition={{ type: "tween", duration: 0.25 }}
-        >
+        <ul className={`nav-items ${isOpen ? "opened" : "closed"}`}>
           <li>
             <a href="#about-section" onClick={closeMenu}>
               <span>01 </span> About
@@ -66,7 +49,7 @@ const Navbar = () => {
               <span>03 </span> Contact
             </a>
           </li>
-        </motion.ul>
+        </ul>
         <HamburgerMenu isOpen={isOpen} onClick={() => setOpen(!isOpen)} />
       </nav>
     </div>

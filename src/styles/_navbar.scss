@@ -16,6 +16,7 @@ nav {
     width: 5rem;
     border-radius: 50%;
     margin-right: 2rem;
+    cursor: pointer;
   }
 }
 
@@ -41,6 +42,18 @@ nav {
   }
 }
 
+@include mobile {
+  .opened {
+    transform: translatey(0%);
+    transition: 0.5s;
+  }
+
+  .closed {
+    transform: translatey(-100%);
+    transition: 0.5s;
+  }
+}
+
 .nav-items {
   @include flex(space-around, center, row);
   flex: 1;
@@ -58,7 +71,6 @@ nav {
     width: 100%;
     height: 100%;
     position: fixed;
-    transform: translatey(-100%);
   }
 }
 

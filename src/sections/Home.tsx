@@ -39,7 +39,16 @@ const Home = () => {
           Qiang <br /> Loozen
         </motion.h2>
         <motion.h4 variants={fadeIn}>Software engineer student</motion.h4>
-        <motion.button variants={fadeIn}>Get in touch</motion.button>
+        <motion.a
+          className="get-in-touch"
+          href="#contact-section"
+          whileHover={{
+            scale: 1.2,
+          }}
+          variants={fadeIn}
+        >
+          Get in touch
+        </motion.a>
       </div>
       <div className="home-image">
         <motion.svg
@@ -50,7 +59,7 @@ const Home = () => {
           xmlns="http://www.w3.org/2000/svg"
           variants={scaleAnim}
         >
-          <g id="programming" clip-path="url(#clip0_1_2)">
+          <g id="programming" clipPath="url(#clip0_1_2)">
             <path
               id="Vector"
               d="M458.321 100.882C473.068 100.882 485.022 88.928 485.022 74.1816C485.022 59.4352 473.068 47.4809 458.321 47.4809C443.575 47.4809 431.621 59.4352 431.621 74.1816C431.621 88.928 443.575 100.882 458.321 100.882Z"
