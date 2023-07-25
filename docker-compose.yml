@@ -4,8 +4,6 @@ services:
     build: .
     container_name: portfolio-website
     restart: unless-stopped
-    ports:
-      - "1234:8000"
     pull_policy: build
 
 networks:
