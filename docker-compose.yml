@@ -5,6 +5,10 @@ services:
     container_name: portfolio-website
     restart: unless-stopped
     pull_policy: build
+    environment:
+      - VITE_EMAILJS_SERVICE_ID: ${VITE_EMAILJS_SERVICE_ID}
+      - VITE_EMAILJS_TEMPLATE_ID: ${VITE_EMAILJS_TEMPLATE_ID}
+      - VITE_EMAILJS_PUBLIC_KEY: ${VITE_EMAILJS_PUBLIC_KEY}
 
 networks:
   default:
