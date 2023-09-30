@@ -2,6 +2,7 @@ import axios from "axios";
 import { Project, ProjectResponse } from "../models/ProjectModel";
 import { ProfileModel, ProfileResponse } from "../models/ProfileModel";
 import { AboutModel, AboutResponse } from "../models/AboutModel";
+import { Experience, ExperienceResponse } from "../models/ExperienceModel";
 
 export const BASE_URL = "https://portfolio-cms.qloozen.nl";
 
@@ -22,6 +23,32 @@ export const fetchProjects = (): Promise<Project[]> => {
         };
       });
       return projects;
+    });
+};
+
+export const fetchExperiences = (): Promise<Experience[]> => {
+  return axios
+    .get<ExperienceResponse>(`${BASE_URL}/api/experiences?populate=*`)
+    .then((res) => {
+      const response = res.data.data;
+      const experiences = response.map((experience) => {
+        console.log(experience);
+        return {
+          id: experience.id,
+          name: experience.attributes.name,
+          technologies: experience.attributes.technologies.data.map(
+            (technology) => {
+              return {
+                id: technology.id,
+                name: technology.attributes.name,
+                lastWorkedWith: technology.attributes.lastWorkedWith,
+                rating: technology.attributes.rating,
+              };
+            }
+          ),
+        };
+      });
+      return experiences;
     });
 };
 
