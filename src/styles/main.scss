@@ -16,6 +16,10 @@ $gray-text: #2c2c2c;
   flex-direction: $direction;
 }
 
+.line-break {
+  white-space: pre-line;
+}
+
 @import "media-queries";
 @import "global";
 @import "home";

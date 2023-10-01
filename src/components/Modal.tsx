@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
 import Backdrop from "./Backdrop";
 import { Project } from "../models/ProjectModel";
-import ReactMarkdown from "react-markdown";
+import ReactMarkDownWrapper from "./ReactMarkDownWrapper";
 
 type Props = {
   handleClose: () => void;
@@ -28,7 +28,7 @@ const Modal = ({ handleClose, project }: Props) => {
         <div className="modal-content">
           <img src={project.thumbnail} alt="" draggable="false" />
           <h3>{project.name}</h3>
-          <ReactMarkdown>{project.description}</ReactMarkdown>
+          <ReactMarkDownWrapper content={project.description} />
           <button onClick={handleClose}>Close</button>
         </div>
       </motion.div>

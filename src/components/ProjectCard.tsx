@@ -2,6 +2,7 @@ import { useState } from "react";
 import { Project } from "../models/ProjectModel";
 import { AnimatePresence, motion } from "framer-motion";
 import Modal from "./Modal";
+import ReactMarkDownWrapper from "./ReactMarkDownWrapper";
 
 type Props = {
   project: Project;
@@ -34,7 +35,9 @@ const ProjectCard = ({ project }: Props) => {
         <img src={project.thumbnail} alt="" draggable="false" />
         <div className="project-card-content">
           <h4>{project.name}</h4>
-          <p>{project.description}</p>
+          <p>
+            <ReactMarkDownWrapper content={project.description} />
+          </p>
           <div className="tag-container">
             {project.tags.map((tag) => (
               <span className="tag" key={tag}>

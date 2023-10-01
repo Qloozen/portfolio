@@ -4,6 +4,7 @@ import Reveal from "../components/Reveal";
 import RevealContainer from "../components/RevealContainer";
 import { useQuery } from "@tanstack/react-query";
 import { fetchAbout } from "../api/Api";
+import ReactMarkDownWrapper from "../components/ReactMarkDownWrapper";
 
 const About = () => {
   const { data } = useQuery({
@@ -19,7 +20,7 @@ const About = () => {
         </Reveal>
         <Reveal className="about-text">
           <h2>About me</h2>
-          <p>{data?.about}</p>
+          <ReactMarkDownWrapper content={data?.about ?? ""} />
         </Reveal>
         <motion.svg
           viewBox="0 0 1440 363"
