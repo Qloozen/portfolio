@@ -26,7 +26,12 @@ const Modal = ({ handleClose, project }: Props) => {
         exit="exit"
       >
         <div className="modal-content">
-          <img src={project.thumbnail} alt="" draggable="false" />
+          <div className="modal-images">
+            <img src={project.thumbnail} alt="" draggable="false" />
+            {project.media.map((image) => (
+              <img src={image} alt="" draggable="false" />
+            ))}
+          </div>
           <h3>{project.name}</h3>
           <ReactMarkDownWrapper content={project.description} />
           <button onClick={handleClose}>Close</button>

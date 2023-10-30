@@ -11,3 +11,9 @@ export type ImageResponse = ResponseObject<{
   alternativeText: string | undefined;
   url: string;
 }>;
+
+export type ImageCollectionResponse = ResponseCollection<{
+  name: string;
+  alternativeText: string | undefined;
+  url: string;
+}>;

@@ -21,6 +21,9 @@ export const fetchProjects = (): Promise<Project[]> => {
           status: project.attributes.status,
           thumbnail:
             BASE_URL + project.attributes.thumbnail.data.attributes.url,
+          media: project.attributes.media.data.map(
+            (img_response) => BASE_URL + img_response.attributes.url
+          ),
         };
       });
       return projects;
