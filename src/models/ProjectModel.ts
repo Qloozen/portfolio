@@ -1,4 +1,8 @@
-import { ImageResponse, ResponseCollection } from "./StrapiReponse";
+import {
+  ImageCollectionResponse,
+  ImageResponse,
+  ResponseCollection,
+} from "./StrapiReponse";
 
 export type Project = {
   id: number;
@@ -7,12 +11,14 @@ export type Project = {
   githubUrl: string | undefined;
   tags: string[];
   thumbnail: string;
-  //   media: string[];
+  status: string;
+  media: string[];
 };
 
 export type ProjectResponse = ResponseCollection<
-  Omit<Project, "id" | "tags" | "thumbnail"> & {
+  Omit<Project, "id" | "tags" | "thumbnail" | "media"> & {
     tags: ResponseCollection<{ name: string }>;
     thumbnail: ImageResponse;
+    media: ImageCollectionResponse;
   }
 >;

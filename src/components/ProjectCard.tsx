@@ -34,6 +34,7 @@ const ProjectCard = ({ project }: Props) => {
       >
         <img src={project.thumbnail} alt="" draggable="false" />
         <div className="project-card-content">
+          <div className="project-status">{project.status}</div>
           <h4>{project.name}</h4>
           <p>
             <ReactMarkDownWrapper content={project.description} />
