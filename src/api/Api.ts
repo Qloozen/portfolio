@@ -18,6 +18,7 @@ export const fetchProjects = (): Promise<Project[]> => {
           description: project.attributes.description,
           githubUrl: project.attributes.githubUrl,
           tags: project.attributes.tags.data.map((tag) => tag.attributes.name),
+          status: project.attributes.status,
           thumbnail:
             BASE_URL + project.attributes.thumbnail.data.attributes.url,
         };

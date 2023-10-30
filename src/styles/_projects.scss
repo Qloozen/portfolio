@@ -5,6 +5,13 @@
   h2 {
     padding-bottom: 5rem;
   }
+  .project-status {
+    font-weight: bold;
+    background-color: $accent-color;
+    padding: 0.2rem 0.5rem;
+    border-radius: 0.5rem;
+    color: black;
+  }
 }
 
 .projects {

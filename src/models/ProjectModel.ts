@@ -7,6 +7,7 @@ export type Project = {
   githubUrl: string | undefined;
   tags: string[];
   thumbnail: string;
+  status: string;
   //   media: string[];
 };
 
