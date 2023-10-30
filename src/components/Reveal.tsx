@@ -9,7 +9,7 @@ type Props = {
 const componentReveal: Variants = {
   offscreen: {
     y: 50,
-    opacity: 0.5,
+    opacity: 1,
   },
   onscreen: {
     y: 0,
