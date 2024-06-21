@@ -1,0 +1,17 @@
+services:
+  portfolio-cms:
+    extends:
+      file: ./portfolio-cms/docker-compose.yml
+      pull_policy: build
+      service: portfolio-cms
+
+  portfolio-web:
+    extends:
+      file: ./portfolio-web/docker-compose.yml
+      pull_policy: build
+      service: portfolio-web
+
+networks:
+  default:
+    name: nginxproxymanager_default
+    external: true

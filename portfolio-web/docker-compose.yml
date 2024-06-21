@@ -1,0 +1,8 @@
+version: '3'
+
+services:
+  portfolio-web:
+    container_name: portfolio-web
+    build:
+      context: ./
+      dockerfile: Dockerfile
