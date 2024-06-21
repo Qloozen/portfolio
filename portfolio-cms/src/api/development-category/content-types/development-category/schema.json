@@ -1,0 +1,28 @@
+{
+  "kind": "collectionType",
+  "collectionName": "development_categories",
+  "info": {
+    "singularName": "development-category",
+    "pluralName": "development-categories",
+    "displayName": "DevelopmentCategory",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string",
+      "unique": true,
+      "required": true,
+      "minLength": 1
+    },
+    "technologies": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::technology.technology",
+      "mappedBy": "development_category"
+    }
+  }
+}
