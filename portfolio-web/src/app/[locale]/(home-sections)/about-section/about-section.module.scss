@@ -1,0 +1,31 @@
+@use '@styles/breakpoints' as *;
+
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: calc(100vh - 60px);
+  padding-top: 48px;
+
+  .content {
+    padding-top: 48px;
+    display: flex;
+    justify-content: space-between;
+    gap: 32px;
+
+    @include breakpoint(md) {
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .aboutSection {
+      flex-basis: 50%;
+    }
+
+    .experienceSection {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+  }
+}

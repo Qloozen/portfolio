@@ -1,0 +1,32 @@
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+
+  h2::after {
+    content: '.';
+    color: var(--primary-color);
+  }
+
+  .divider {
+    flex: 1;
+    background: var(--font-color);
+  }
+}
+
+.left {
+  flex-direction: row;
+
+  h2 {
+    padding-right: 48px;
+  }
+}
+
+.right {
+  flex-direction: row-reverse;
+
+  h2 {
+    padding-left: 48px;
+  }
+}
