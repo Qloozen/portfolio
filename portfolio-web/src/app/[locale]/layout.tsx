@@ -5,6 +5,7 @@ import { getMessages } from 'next-intl/server';
 import { Navbar } from '@components';
 import { ThemeProvider } from 'next-themes';
 
+import styles from './layout.module.scss';
 import '@styles/variables.scss';
 import '@styles/globals.scss';
 
@@ -37,7 +38,9 @@ const RootLayout = async ({
       <body>
         <ThemeProvider>
           <Navbar />
-          <NextIntlClientProvider messages={messages}>{children}</NextIntlClientProvider>
+          <NextIntlClientProvider messages={messages}>
+            <main className="styles">{children}</main>
+          </NextIntlClientProvider>
         </ThemeProvider>
       </body>
     </html>

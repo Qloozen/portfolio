@@ -1,0 +1,58 @@
+@use '@styles/breakpoints' as *;
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: calc(100vh - 60px);
+
+  @include breakpoint(md) {
+    flex-direction: column;
+  }
+
+  .descriptionSection {
+    flex: 2;
+    padding-right: 56px;
+
+    h1 {
+      font-size: clamp(1.5rem, 3vw, 2.5rem);
+
+      span {
+        color: var(--primary-color);
+      }
+    }
+
+    p {
+      font-size: clamp(0.75rem, 2.5vw, 1rem);
+    }
+
+    .contactButton {
+      margin-top: 32px;
+    }
+
+    @include breakpoint(md) {
+      padding-right: 0;
+    }
+  }
+  .imageSection {
+    position: relative;
+    height: 500px;
+    flex: 1 1 200px;
+
+    @include breakpoint(md) {
+      width: 80%;
+      order: -1;
+    }
+  }
+  .socialSection {
+    flex: 0 0 100px;
+    display: flex;
+    align-items: flex-end;
+    flex-direction: column;
+    gap: 16px;
+
+    > * {
+      color: var(--font-color);
+    }
+  }
+}

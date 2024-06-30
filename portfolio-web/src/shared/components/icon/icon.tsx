@@ -1,3 +1,5 @@
+'use client';
+
 import { ReactSVG } from 'react-svg';
 import { IconProps } from './types';
 import classNames from 'classnames/bind';

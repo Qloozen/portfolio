@@ -1,5 +1,7 @@
 {
-  "translations": {
-    "example": "Voorbeeld."
+  "hero": {
+    "greeting": "Hallo daar!",
+    "greeting2": "Ik ben",
+    "contact": "Neem contact op"
   }
 }

@@ -1,5 +1,7 @@
 {
-  "translations": {
-    "example": "Example."
+  "hero": {
+    "greeting": "Hey there!",
+    "greeting2": "I'm",
+    "contact": "Contact me"
   }
 }

@@ -18,7 +18,7 @@ const paths = [
 ];
 
 const Navbar = () => {
-  const [isMenuOpen, setIsMenuOpen] = useState(true);
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
   const { theme, setTheme } = useTheme();
   const pathName = usePathname();
 
