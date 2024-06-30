@@ -19,7 +19,9 @@
     ],
     "baseUrl": "./src",
     "paths": {
-      "@styles/*": ["./shared/styles/*"]
+      "@styles/*": ["./shared/styles/*"],
+      "@components": ["./shared/components/index"],
+      "@components/*": ["./shared/components/*"]
     }
   },
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts"],

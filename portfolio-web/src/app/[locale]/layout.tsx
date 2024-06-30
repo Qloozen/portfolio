@@ -1,9 +1,12 @@
 import type { Metadata } from 'next';
 import { Inter } from 'next/font/google';
-import '@styles/globals.scss';
-import '@styles/variables.scss';
 import { NextIntlClientProvider } from 'next-intl';
 import { getMessages } from 'next-intl/server';
+import { Navbar } from '@components';
+import { ThemeProvider } from 'next-themes';
+
+import '@styles/variables.scss';
+import '@styles/globals.scss';
 
 const inter = Inter({
   subsets: ['latin'],
@@ -27,11 +30,15 @@ const RootLayout = async ({
 
   return (
     <html
+      suppressHydrationWarning
       lang={locale}
       className={`${inter.variable}`}
     >
       <body>
-        <NextIntlClientProvider messages={messages}>{children}</NextIntlClientProvider>
+        <ThemeProvider>
+          <Navbar />
+          <NextIntlClientProvider messages={messages}>{children}</NextIntlClientProvider>
+        </ThemeProvider>
       </body>
     </html>
   );

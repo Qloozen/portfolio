@@ -1,0 +1,51 @@
+$width: 40px;
+
+.container {
+  height: 32px;
+  width: $width;
+  cursor: pointer;
+  background: none;
+  border: none;
+  position: relative;
+
+  span,
+  span::before,
+  span::after {
+    background: currentColor;
+    border-radius: 3px;
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: $width;
+    height: 6px;
+    margin-top: 13px;
+
+    transition: 0.3s ease-in-out;
+  }
+
+  span {
+    &::before {
+      margin-top: -12px;
+    }
+    &::after {
+      margin-top: 12px;
+    }
+  }
+
+  &--open {
+    span {
+      background: transparent;
+
+      &::before {
+        margin-top: 0;
+        transform: rotate(45deg);
+      }
+
+      &::after {
+        margin-top: 0;
+        transform: rotate(-45deg);
+      }
+    }
+  }
+}
