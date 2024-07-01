@@ -36,7 +36,7 @@ const projects = [
 const ProjectSection = () => {
   return (
     <div className={styles.container}>
-      <SectionDivider title="Project" />
+      <SectionDivider title="Recent Projects" />
       <div className={styles.content}>
         {projects.map((project) => (
           <ProjectCard
