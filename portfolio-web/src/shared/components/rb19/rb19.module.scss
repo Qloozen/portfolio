@@ -1,0 +1,11 @@
+@use '@styles/breakpoints' as *;
+
+.container {
+  width: 100%;
+  height: 70vh;
+  overflow: hidden;
+
+  @include breakpoint(md) {
+    display: none;
+  }
+}

@@ -1,6 +1,7 @@
 import SectionDivider from '@components/section-divider/section-divider';
 import styles from './about-section.module.scss';
 import TechnologyList from '@components/technology-list/technology-list';
+import { RB19 } from '@components/rb19/rb19';
 
 const technologies = [
   { iconName: 'layout', name: 'Front-end', technologies: ['React', 'Next.js', 'Tailwind CSS', 'Sass'] },
@@ -12,6 +13,7 @@ const AboutSection = () => {
   return (
     <div className={styles.container}>
       <SectionDivider title="About" />
+
       <div className={styles.content}>
         <div className={styles.aboutSection}>
           <p>
@@ -38,6 +40,8 @@ const AboutSection = () => {
           ))}
         </div>
       </div>
+
+      <RB19 />
     </div>
   );
 };

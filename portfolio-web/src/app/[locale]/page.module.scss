@@ -1,4 +1,8 @@
 @use '@styles/breakpoints' as *;
 
-.container {
+.credits {
+  font-size: 12px;
+  color: var(--font-disabled-color);
+  width: 100%;
+  text-align: center;
 }
