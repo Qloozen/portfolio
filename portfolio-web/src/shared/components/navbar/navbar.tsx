@@ -22,8 +22,6 @@ const Navbar = () => {
   const { theme, setTheme } = useTheme();
   const pathName = usePathname();
 
-  console.log(theme);
-
   const parts = pathName.split('/');
   const activePath = parts.length > 2 ? `/${parts[2]}` : '/';
 
@@ -66,7 +64,7 @@ const Navbar = () => {
             onClick={() => {
               setTheme(theme === 'dark' ? 'light' : 'dark');
             }}
-            leadingIcon={theme === 'dark' ? 'sun' : 'moon'}
+            leadingIcon={theme === 'dark' ? 'moon' : 'sun'}
           />
         </div>
       </div>

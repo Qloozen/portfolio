@@ -5,12 +5,14 @@ import Image from 'next/image';
 import styles from './page.module.scss';
 import HeroSection from './(home-sections)/hero-section/hero-section';
 import AboutSection from './(home-sections)/about-section/about-section';
+import ProjectSection from './(home-sections)/project-section/project-section';
 
 const Home = () => {
   return (
     <div className={styles.container}>
       <HeroSection />
       <AboutSection />
+      <ProjectSection />
       <p className={styles.credits}>
         This work is based on &quot;Oracle Red Bull F1 Car RB19 2023&quot;
         (https://sketchfab.com/3d-models/oracle-red-bull-f1-car-rb19-2023-e4afe46f3aab4b23a418da06fc163821) by Redgrund

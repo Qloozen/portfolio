@@ -1,0 +1,24 @@
+@use '@styles/breakpoints' as *;
+
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding-top: 48px;
+  height: 100vh;
+  gap: 32px;
+
+  .content {
+    padding-top: 48px;
+
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 32px;
+    row-gap: 32px;
+  }
+
+  .viewProjectsBtn {
+    align-self: center;
+  }
+}
