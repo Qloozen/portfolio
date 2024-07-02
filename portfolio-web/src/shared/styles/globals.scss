@@ -71,6 +71,10 @@ h6 {
 */
 
 * {
+  box-sizing: border-box;
+}
+
+* {
   &::-webkit-scrollbar {
     width: 6px;
   }
