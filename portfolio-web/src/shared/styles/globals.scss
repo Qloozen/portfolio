@@ -99,7 +99,7 @@ body {
 }
 
 main {
-  padding: 0 10vw;
+  padding: 0 48px;
 
   @include breakpoint(md) {
     padding: 0 5vw;
