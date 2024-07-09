@@ -47,7 +47,7 @@ const ProjectSection = () => {
       </div>
       <NavigationButton
         className={styles.viewProjectsBtn}
-        href=""
+        href="/work"
         trailingIcon="arrow-right"
       >
         View Projects

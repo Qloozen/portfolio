@@ -31,7 +31,7 @@ const ProjectCard = ({ project }: ProjectCardProps) => {
 
       <div className={styles.detailBtn}>
         <NavigationButton
-          href="/"
+          href={`work/${project.id}`}
           variant="filled"
           trailingIcon="arrow-right"
           size="small"

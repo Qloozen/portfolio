@@ -1,0 +1,57 @@
+.container {
+  .image {
+    z-index: -1;
+    filter: brightness(0.1);
+  }
+
+  .overview {
+    color: var(--font-light-color);
+    height: calc(100vh - 60px);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+
+    h1 {
+      font-size: 3rem;
+      font-weight: 700;
+    }
+
+    .tags {
+      display: flex;
+      gap: 48px;
+    }
+  }
+
+  .technologyContainer {
+    margin-top: 80px;
+  }
+
+  .technologies {
+    display: flex;
+    gap: 24px;
+    margin: 48px 0;
+
+    span {
+      padding: 8px 16px;
+      border-radius: 8px;
+      background-color: var(--background-hover-color);
+    }
+  }
+
+  .galleryContainer {
+    margin: 80px 0;
+  }
+
+  .gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 24px;
+    margin-top: 48px;
+
+    img {
+      width: 100%;
+      height: auto;
+      border-radius: 8px;
+    }
+  }
+}
