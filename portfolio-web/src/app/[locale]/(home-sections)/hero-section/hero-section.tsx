@@ -22,7 +22,7 @@ const HeroSection = () => {
 
         <NavigationButton
           className={styles.contactButton}
-          href={''}
+          href="/contact"
           trailingIcon="arrow-right"
           variant="filled"
         >

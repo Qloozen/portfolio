@@ -1,6 +1,6 @@
 import classNames from 'classnames/bind';
 import { IconButtonProps } from './types';
-import { Button, Icon } from '@components';
+import { Button, Icon, Spinner } from '@components';
 
 import styles from './icon-button.module.scss';
 
@@ -14,6 +14,7 @@ const IconButton = ({
   size = 'medium',
   variant = 'text',
   iconColorType = undefined,
+  isLoading = false,
   ...buttonProps
 }: IconButtonProps) => {
   return (
@@ -23,19 +24,21 @@ const IconButton = ({
       variant={variant}
       className={cx('container', className)}
     >
-      {leadingIcon && (
+      {leadingIcon && !isLoading && (
         <Icon
           iconColorType={iconColorType}
           iconName={leadingIcon}
         />
       )}
+      {leadingIcon && isLoading && <Spinner size="small" />}
       {children && children}
-      {trailingIcon && (
+      {trailingIcon && !isLoading && (
         <Icon
           iconColorType={iconColorType}
           iconName={trailingIcon}
         />
       )}
+      {trailingIcon && isLoading && <Spinner size="small" />}
     </Button>
   );
 };

@@ -1,0 +1,39 @@
+@use '@styles/breakpoints' as *;
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: calc(100vh - 60px);
+  padding: 48px 0;
+
+  .contactForm {
+    display: flex;
+    flex-direction: column;
+    width: min(100%, 800px);
+    gap: 16px;
+    padding: 48px 0;
+  }
+
+  .error {
+    color: red;
+    font-size: 14px;
+    margin-top: 8px;
+  }
+
+  .bottom {
+    display: flex;
+    justify-content: space-between;
+
+    @include breakpoint(md) {
+      flex-direction: column;
+      gap: 16px;
+      align-items: center;
+
+      button {
+        align-self: center;
+      }
+    }
+  }
+}

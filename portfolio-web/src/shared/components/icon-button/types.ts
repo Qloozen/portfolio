@@ -5,4 +5,5 @@ export type IconButtonProps = {
   leadingIcon?: string;
   trailingIcon?: string;
   iconColorType?: 'fill' | 'stroke';
+  isLoading?: boolean;
 } & Omit<ButtonProps, 'children'>;

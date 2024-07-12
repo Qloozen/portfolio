@@ -19,7 +19,9 @@
     "react": "^18",
     "react-dom": "^18",
     "react-svg": "^16.1.34",
-    "three": "^0.166.0"
+    "resend": "^3.4.0",
+    "three": "^0.166.0",
+    "zod": "^3.23.8"
   },
   "devDependencies": {
     "@react-three/eslint-plugin": "^0.1.1",
