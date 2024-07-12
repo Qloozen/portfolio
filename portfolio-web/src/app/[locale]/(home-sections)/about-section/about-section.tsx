@@ -3,7 +3,7 @@ import styles from './about-section.module.scss';
 import TechnologyList from '@components/technology-list/technology-list';
 import { RB19 } from '@components/rb19/rb19';
 import BlockRendererClient from '@components/block-renderer-client/block-renderer-client';
-import { fetchAbout } from './api';
+import { fetchAbout, fetchDevelopmentCategories } from './api';
 
 const technologies = [
   { iconName: 'layout', name: 'Front-end', technologies: ['React', 'Next.js', 'Tailwind CSS', 'Sass'] },
@@ -13,6 +13,7 @@ const technologies = [
 
 const AboutSection = async () => {
   const content = await fetchAbout();
+  const developmentCategories = await fetchDevelopmentCategories();
 
   return (
     <div className={styles.container}>
@@ -24,12 +25,12 @@ const AboutSection = async () => {
         </div>
 
         <div className={styles.experienceSection}>
-          {technologies.map(({ iconName, name, technologies }, index) => (
+          {developmentCategories.map(({ id, iconName, name, technologies }, index) => (
             <TechnologyList
               iconName={iconName}
               key={name}
               title={name}
-              technologies={technologies}
+              technologies={technologies.map((technology) => technology.name)}
               showDivider={index !== technologies.length - 1}
             />
           ))}

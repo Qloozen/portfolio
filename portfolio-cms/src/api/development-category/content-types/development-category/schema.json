@@ -23,6 +23,10 @@
       "relation": "oneToMany",
       "target": "api::technology.technology",
       "mappedBy": "development_category"
+    },
+    "iconName": {
+      "type": "string",
+      "required": true
     }
   }
 }
