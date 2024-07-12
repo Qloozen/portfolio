@@ -2,8 +2,8 @@ import SectionDivider from '@components/section-divider/section-divider';
 import styles from './about-section.module.scss';
 import TechnologyList from '@components/technology-list/technology-list';
 import { RB19 } from '@components/rb19/rb19';
-import BlockRendererClient from '@components/block-renderer-client/block-renderer-client';
 import { fetchAbout, fetchDevelopmentCategories } from './api';
+import { BlockRendererClient } from '@components';
 
 const technologies = [
   { iconName: 'layout', name: 'Front-end', technologies: ['React', 'Next.js', 'Tailwind CSS', 'Sass'] },

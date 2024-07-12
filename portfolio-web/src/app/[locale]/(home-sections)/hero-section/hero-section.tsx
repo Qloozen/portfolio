@@ -1,11 +1,14 @@
-import { useTranslations } from 'next-intl';
 import Image from 'next/image';
-import { NavigationButton } from '@components';
+import { BlockRendererClient, NavigationButton } from '@components';
 
 import styles from './hero-section.module.scss';
+import { getTranslations } from 'next-intl/server';
+import { fetchHero } from './api';
 
-const HeroSection = () => {
-  const t = useTranslations('hero');
+const HeroSection = async () => {
+  const t = await getTranslations('hero');
+
+  const heroContent = await fetchHero();
 
   return (
     <div className={styles.container}>
@@ -14,11 +17,8 @@ const HeroSection = () => {
         <h1>
           {t('greeting2')} <span>Qiang Loozen</span>
         </h1>
-        <p>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Culpa officiis cupiditate ducimus perferendis? Natus
-          dolores iste adipisci quaerat et quos velit placeat at minima magnam aut, cupiditate architecto recusandae
-          nostrum.
-        </p>
+
+        <BlockRendererClient content={heroContent} />
 
         <NavigationButton
           className={styles.contactButton}

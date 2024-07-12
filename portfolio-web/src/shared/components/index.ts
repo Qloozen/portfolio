@@ -7,3 +7,4 @@ export { default as NavigationButton } from './navigation-button/navigation-butt
 export { default as TextInput } from './text-input/text-input';
 export { default as TextArea } from './text-area/text-area';
 export { default as Spinner } from './spinner/spinner';
+export { default as BlockRendererClient } from './block-renderer-client/block-renderer-client';
