@@ -11,6 +11,7 @@
   "dependencies": {
     "@react-three/drei": "^9.108.1",
     "@react-three/fiber": "^8.16.8",
+    "@strapi/blocks-react-renderer": "^1.0.1",
     "@types/three": "^0.166.0",
     "classnames": "^2.5.1",
     "next": "14.2.4",
@@ -31,6 +32,7 @@
     "eslint": "^8",
     "eslint-config-next": "14.2.4",
     "eslint-config-prettier": "^9.1.0",
+    "husky": "^9.0.11",
     "prettier": "^3.3.2",
     "sass": "^1.77.6",
     "typescript": "^5"
