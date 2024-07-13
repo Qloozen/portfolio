@@ -1,7 +1,7 @@
 import { Technology, technologyListMapper } from './technology';
 
 export type DevelopmentCategory = {
-  id: string;
+  id: number;
   name: string;
   iconName: string;
   technologies: Technology[];

@@ -1,5 +1,5 @@
 export type Technology = {
-  id: string;
+  id: number;
   name: string;
   lastWorkedWith: string;
 };

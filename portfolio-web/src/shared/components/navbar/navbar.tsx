@@ -12,7 +12,7 @@ const cx = classNames.bind(styles);
 
 const paths = [
   { name: 'Home', path: '/' },
-  { name: 'Work', path: '/work' },
+  { name: 'Projects', path: '/projects' },
   { name: 'Contact', path: '/contact' },
 ];
 

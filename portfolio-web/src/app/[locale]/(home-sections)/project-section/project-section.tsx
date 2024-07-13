@@ -20,7 +20,7 @@ const ProjectSection = async () => {
       </div>
       <NavigationButton
         className={styles.viewProjectsBtn}
-        href="/work"
+        href="/projects"
         trailingIcon="arrow-right"
       >
         View Projects

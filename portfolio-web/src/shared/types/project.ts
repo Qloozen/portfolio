@@ -2,7 +2,7 @@ import { type BlocksContent } from '@strapi/blocks-react-renderer';
 import { Technology, technologyListMapper } from './technology';
 
 export type Project = {
-  id: string;
+  id: number;
   name: string;
   description: BlocksContent;
   githubUrl?: string;
