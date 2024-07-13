@@ -3,6 +3,7 @@ import Image from 'next/image';
 
 import styles from './project-card.module.scss';
 import NavigationButton from '@components/navigation-button/navigation-button';
+import BlockRendererClient from '@components/block-renderer-client/block-renderer-client';
 
 const ProjectCard = ({ project }: ProjectCardProps) => {
   return (
@@ -18,16 +19,18 @@ const ProjectCard = ({ project }: ProjectCardProps) => {
       <h3>{project.name}</h3>
       <div className={styles.tags}>
         <span className={styles.yearTag}>{project.lastUpdated.split('-')[0]}</span>
-        {project.technologies.map((technology) => (
+        {project.technologies.map(({ id, name }) => (
           <span
             className={styles.technologyTag}
-            key={technology}
+            key={id}
           >
-            {technology}
+            {name}
           </span>
         ))}
       </div>
-      <p className={styles.description}>{project.description}</p>
+      <div className={styles.description}>
+        <BlockRendererClient content={project.description} />
+      </div>
 
       <div className={styles.detailBtn}>
         <NavigationButton

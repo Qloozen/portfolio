@@ -1,11 +1,4 @@
-export type Project = {
-  id: number;
-  name: string;
-  description: string;
-  lastUpdated: string;
-  technologies: string[];
-  status: string;
-};
+import { Project } from 'shared/types/project';
 
 export type ProjectCardProps = {
   project: Project;
