@@ -47,11 +47,10 @@
     grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
     gap: 24px;
     margin-top: 48px;
+  }
 
-    img {
-      width: 100%;
-      height: auto;
-      border-radius: 8px;
-    }
+  .galleryImage {
+    object-fit: cover;
+    border-radius: 5px;
   }
 }
