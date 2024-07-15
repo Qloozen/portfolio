@@ -4,20 +4,17 @@ import TechnologyList from '@components/technology-list/technology-list';
 import { RB19 } from '@components/rb19/rb19';
 import { fetchAbout, fetchDevelopmentCategories } from './api';
 import { BlockRendererClient } from '@components';
-
-const technologies = [
-  { iconName: 'layout', name: 'Front-end', technologies: ['React', 'Next.js', 'Tailwind CSS', 'Sass'] },
-  { iconName: 'server', name: 'Back-end', technologies: ['Node.js', 'Express', 'MongoDB', 'Firebase'] },
-  { iconName: 'smartphone', name: 'Mobile', technologies: ['React Native', 'Expo', 'Firebase'] },
-];
+import { getTranslations } from 'next-intl/server';
 
 const AboutSection = async () => {
+  const t = await getTranslations('about');
+
   const content = await fetchAbout();
   const developmentCategories = await fetchDevelopmentCategories();
 
   return (
     <div className={styles.container}>
-      <SectionDivider title="About" />
+      <SectionDivider title={t('about')} />
 
       <div className={styles.content}>
         <div className={styles.aboutSection}>

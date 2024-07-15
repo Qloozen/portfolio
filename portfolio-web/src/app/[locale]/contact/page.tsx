@@ -7,6 +7,7 @@ import styles from './page.module.scss';
 import FormButton from './formButton';
 import { FormState } from './type';
 import { useEffect, useRef } from 'react';
+import { useTranslations } from 'next-intl';
 
 const initialState: FormState = {
   data: {
@@ -27,16 +28,18 @@ const ContactPage = () => {
     }
   }, [state]);
 
+  const t = useTranslations('contact');
+
   return (
     <div className={styles.container}>
-      <h1>Contact me</h1>
+      <h1>{t('contactMe')}</h1>
       <form
         ref={ref}
         action={formAction}
         className={styles.contactForm}
       >
         <TextInput
-          label="Full Name"
+          label={t('fullName')}
           name="full_name"
           required
           errorMessages={state.errors?.full_name}
@@ -52,7 +55,7 @@ const ContactPage = () => {
 
         <TextArea
           rows={5}
-          label="message"
+          label={t('message')}
           name="message"
           errorMessages={state.errors?.message}
         />

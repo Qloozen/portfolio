@@ -8,7 +8,7 @@ import { fetchHero } from './api';
 const HeroSection = async () => {
   const t = await getTranslations('hero');
 
-  const heroContent = await fetchHero();
+  const hero = await fetchHero();
 
   return (
     <div className={styles.container}>
@@ -18,7 +18,7 @@ const HeroSection = async () => {
           {t('greeting2')} <span>Qiang Loozen</span>
         </h1>
 
-        <BlockRendererClient content={heroContent} />
+        <BlockRendererClient content={hero.description} />
 
         <NavigationButton
           className={styles.contactButton}
@@ -26,12 +26,12 @@ const HeroSection = async () => {
           trailingIcon="arrow-right"
           variant="filled"
         >
-          Contact me
+          {t('contact')}
         </NavigationButton>
       </div>
       <div className={styles.imageSection}>
         <Image
-          src="/assets/images/portrait.png"
+          src={hero.profile.url}
           alt="hero image"
           fill
           objectFit="contain"

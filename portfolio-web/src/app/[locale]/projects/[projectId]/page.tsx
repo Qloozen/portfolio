@@ -4,11 +4,14 @@ import styles from './page.module.scss';
 import classnames from 'classnames/bind';
 import { fetchProject } from './api';
 import { BlockRendererClient } from '@components';
+import { getTranslations } from 'next-intl/server';
 const cx = classnames.bind(styles);
 
 const Page = async ({ params: { projectId } }: { params: { projectId: string } }) => {
   const { description, gallery, lastUpdated, name, projectType, status, technologies, thumbnail, githubUrl } =
     await fetchProject(Number(projectId));
+
+  const t = await getTranslations('projectPage');
 
   return (
     <div className={styles.container}>
@@ -27,13 +30,15 @@ const Page = async ({ params: { projectId } }: { params: { projectId: string } }
         <div className={styles.tags}>
           <span>{projectType}</span>
           <span>{status}</span>
-          <span>last updated: {lastUpdated}</span>
+          <span>
+            {t('lastUpdated')}: {lastUpdated}
+          </span>
           {githubUrl && <a href={githubUrl}>GitHub</a>}
         </div>
       </div>
 
       <div className={styles.technologyContainer}>
-        <h2>Technologies</h2>
+        <h2>{t('technologies')}</h2>
         <div className={styles.technologies}>
           {technologies.map(({ id, name }) => (
             <span key={id}>{name}</span>
@@ -41,7 +46,7 @@ const Page = async ({ params: { projectId } }: { params: { projectId: string } }
         </div>
       </div>
       <div className={styles.galleryContainer}>
-        <h2>Gallery</h2>
+        <h2>{t('gallery')}</h2>
         <div className={styles.gallery}>
           {gallery.map(({ url, alt }) => (
             <Image

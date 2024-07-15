@@ -1,8 +1,10 @@
 import { IconButton } from '@components';
+import { useTranslations } from 'next-intl';
 import { useFormStatus } from 'react-dom';
 
 const FormButton = () => {
   const { pending } = useFormStatus();
+  const t = useTranslations('contact');
 
   return (
     <IconButton
@@ -11,7 +13,7 @@ const FormButton = () => {
       trailingIcon="send"
       isLoading={pending}
     >
-      Send email
+      {t('send')}
     </IconButton>
   );
 };

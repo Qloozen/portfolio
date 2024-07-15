@@ -1,13 +1,15 @@
 import SectionDivider from '@components/section-divider/section-divider';
 import styles from './experience-section.module.scss';
 import { fetchWork } from './api';
+import { getTranslations } from 'next-intl/server';
 
 const ExperienceSection = async () => {
   const work = await fetchWork();
+  const t = await getTranslations('experience');
 
   return (
     <div className={styles.container}>
-      <SectionDivider title="Experience" />
+      <SectionDivider title={t('experience')} />
 
       <div className={styles.timeline}>
         {work.map(({ company, id, description, location, position, start, end }) => (

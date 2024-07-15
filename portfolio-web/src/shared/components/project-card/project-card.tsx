@@ -10,7 +10,7 @@ const ProjectCard = ({ project }: ProjectCardProps) => {
     <div className={styles.container}>
       <Image
         className={styles.image}
-        src="/assets/images/project.png"
+        src={project.thumbnail.url}
         alt="dijd"
         width={500}
         height={200}

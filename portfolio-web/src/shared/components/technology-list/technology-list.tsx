@@ -1,14 +1,17 @@
 import { TechnologyListProps } from './types';
 import styles from './technology-list.module.scss';
 import Icon from '@components/icon/icon';
+import { useTranslations } from 'next-intl';
 
 const TechnologyList = ({ iconName, technologies, title, showDivider = true }: TechnologyListProps) => {
+  const t = useTranslations('about');
+
   return (
     <div className={styles.container}>
       <div className={styles.titleSection}>
         <Icon iconName={iconName} />
         <p>
-          Used for <span>{title}</span>
+          {t('usedFor')} <span>{title}</span>
         </p>
       </div>
       <ul className={styles.list}>

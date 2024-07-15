@@ -3,17 +3,17 @@
 import { z } from 'zod';
 import { Resend } from 'resend';
 import { FormState } from './type';
+import { getTranslations } from 'next-intl/server';
 
 const schema = z.object({
   full_name: z.string().min(1).max(100),
   user_email: z.string().email(),
-  message: z
-    .string()
-    .min(10, 'Message must contain at least 10 character(s)')
-    .max(1000, 'Message must contain at most 1000 character(s)'),
+  message: z.string().min(10, 'minError').max(1000, 'maxError'),
 });
 
 export async function sendEmail(prevState: any, formData: FormData): Promise<FormState> {
+  const t = await getTranslations('contact');
+
   const validatedFields = schema.safeParse({
     full_name: formData.get('full_name'),
     user_email: formData.get('user_email'),
@@ -21,8 +21,17 @@ export async function sendEmail(prevState: any, formData: FormData): Promise<For
   });
 
   if (!validatedFields.success) {
+    const errors = validatedFields.error.flatten().fieldErrors as Record<string, string[]>;
+    const translatedErrors = Object.keys(errors).reduce(
+      (acc, key) => {
+        acc[key] = errors[key]?.map((error: string) => t(error)) || [];
+        return acc;
+      },
+      {} as Record<string, string[]>
+    );
+
     return {
-      errors: validatedFields.error.flatten().fieldErrors,
+      errors: translatedErrors,
     };
   }
 
@@ -43,7 +52,7 @@ export async function sendEmail(prevState: any, formData: FormData): Promise<For
   if (res.error) {
     return {
       errors: {
-        general: 'An error occurred while sending the email',
+        general: t('globalError'),
       },
     };
   }

@@ -4,7 +4,8 @@
   "info": {
     "singularName": "project",
     "pluralName": "projects",
-    "displayName": "Project"
+    "displayName": "Project",
+    "description": ""
   },
   "options": {
     "draftAndPublish": true
@@ -35,36 +36,36 @@
       "required": true
     },
     "thumbnail": {
-      "allowedTypes": [
-        "images",
-        "files",
-        "videos",
-        "audios"
-      ],
       "type": "media",
       "multiple": false,
-      "pluginOptions": {
-        "i18n": {
-          "localized": true
-        }
-      },
-      "required": true
-    },
-    "gallery": {
+      "required": true,
       "allowedTypes": [
         "images",
         "files",
         "videos",
         "audios"
       ],
-      "type": "media",
-      "multiple": true,
       "pluginOptions": {
         "i18n": {
-          "localized": true
+          "localized": false
         }
-      },
-      "required": true
+      }
+    },
+    "gallery": {
+      "type": "media",
+      "multiple": true,
+      "required": true,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ],
+      "pluginOptions": {
+        "i18n": {
+          "localized": false
+        }
+      }
     },
     "githubUrl": {
       "pluginOptions": {
@@ -79,7 +80,7 @@
     "lastUpdated": {
       "pluginOptions": {
         "i18n": {
-          "localized": true
+          "localized": false
         }
       },
       "type": "date",
@@ -95,7 +96,9 @@
       "enum": [
         "school project",
         "group project",
-        "personal project"
+        "personal project",
+        "groep project",
+        "persoonlijk project"
       ],
       "required": true
     },
@@ -109,7 +112,10 @@
       "enum": [
         "in development",
         "in maintenance",
-        "finished"
+        "finished",
+        "in ontwikkeling",
+        "in onderhoud",
+        "afgerond"
       ],
       "required": true
     },
