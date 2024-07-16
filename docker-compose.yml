@@ -15,3 +15,6 @@ networks:
   default:
     name: nginxproxymanager_default
     external: true
+
+volumes:
+  portfolio-media:
