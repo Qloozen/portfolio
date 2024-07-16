@@ -30,5 +30,9 @@
     "minError": "Bericht moet minstens 10 karakter(s) bevatten",
     "maxError": "Bericht mag maximaal 1000 karakter(s) bevatten",
     "globalError": "Er is iets misgegaan, probeer het later opnieuw"
+  },
+  "error": {
+    "somethingWentWrong": "Er is iets misgegaan",
+    "tryAgain": "Probeer opnieuw"
   }
 }

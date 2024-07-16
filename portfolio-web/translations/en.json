@@ -30,5 +30,9 @@
     "minError": "Message must contain at least 10 character(s)",
     "maxError": "Message must contain at most 1000 character(s)",
     "globalError": "Something went wrong, please try again later"
+  },
+  "error": {
+    "somethingWentWrong": "Something went wrong",
+    "tryAgain": "Try again"
   }
 }
