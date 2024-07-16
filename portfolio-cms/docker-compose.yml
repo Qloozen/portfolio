@@ -20,11 +20,3 @@ services:
       NODE_ENV: ${NODE_ENV}
     volumes:
       - portfolio-media:/opt/app/public/uploads
-
-volumes:
-  portfolio-media:
-
-networks:
-  default:
-    name: nginxproxymanager_default
-    external: true
