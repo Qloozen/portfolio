@@ -6,4 +6,10 @@ services:
     build:
       context: .
       dockerfile: Dockerfile
-    pull_policy: build
+      pull_policy: build
+    environment:
+      NEXT_RESEND_API_KEY: ${NEXT_RESEND_API_KEY}
+      NEXT_FROM_EMAIL: ${NEXT_FROM_EMAIL}
+      NEXT_TO_EMAIL: ${NEXT_TO_EMAIL}
+      NEXT_BASE_API_URL: ${NEXT_BASE_API_URL}
+      NEXT_BASE_CMS_URL: ${NEXT_BASE_CMS_URL}
