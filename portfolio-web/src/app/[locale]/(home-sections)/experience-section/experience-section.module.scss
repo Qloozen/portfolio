@@ -1,0 +1,149 @@
+@use '@styles/breakpoints' as *;
+
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-top: 48px;
+  min-height: 100vh;
+
+  .timeline {
+    padding: 48px 0;
+    position: relative;
+
+    &::after {
+      // Vertical timeline
+      content: '';
+      position: absolute;
+      top: 48px;
+      bottom: 48px;
+      border-radius: 8px;
+      width: 6px;
+      transform: translate(-50%, 0);
+      background-color: var(--background-hover-color);
+      left: 50%;
+
+      @include breakpoint(md) {
+        left: 0;
+      }
+    }
+  }
+
+  .box {
+    padding: 10px 40px;
+    position: relative;
+    background-color: inherit;
+    width: 50%;
+
+    .content {
+      padding: 20px 30px;
+      background-color: var(--background-hover-color);
+      position: relative;
+      border-radius: 6px;
+    }
+
+    // Circle
+    &::after {
+      content: '';
+      position: absolute;
+      width: 20px;
+      height: 20px;
+      right: 0;
+      transform: translate(50%, 0);
+      background-color: var(--background-hover-color);
+      border: 3px solid var(--primary-color);
+      top: 20px;
+      border-radius: 50%;
+      z-index: 1;
+
+      @include breakpoint(md) {
+        left: 0;
+        right: auto;
+      }
+    }
+
+    &:nth-child(odd) {
+      left: 0;
+
+      @include breakpoint(md) {
+        left: 0;
+        width: 100%;
+      }
+
+      //arrow
+      &::before {
+        content: ' ';
+        height: 0;
+        position: absolute;
+        top: 20px;
+        width: 0;
+        z-index: 1;
+        right: 30px;
+        border: medium solid var(--background-hover-color);
+        border-width: 10px 0 10px 10px;
+        border-color: transparent transparent transparent var(--background-hover-color);
+
+        @include breakpoint(md) {
+          left: 30px;
+          border-width: 10px 10px 10px 0;
+          border-color: transparent var(--background-hover-color);
+        }
+      }
+
+      @include breakpoint(md) {
+        &::after {
+          left: 0;
+          transform: translate(-50%, 0);
+        }
+      }
+    }
+
+    &:nth-child(even) {
+      left: 50%;
+
+      @include breakpoint(md) {
+        left: 0;
+        width: 100%;
+      }
+
+      &::before {
+        //arrow
+        content: ' ';
+        height: 0;
+        position: absolute;
+        top: 20px;
+        width: 0;
+        z-index: 1;
+        left: 30px;
+        border: medium solid var(--background-hover-color);
+        border-width: 10px 10px 10px 0;
+        border-color: transparent var(--background-hover-color);
+      }
+
+      &::after {
+        left: 0;
+        transform: translate(-50%, 0);
+      }
+    }
+  }
+
+  .duration {
+    font-size: 0.9rem;
+    color: var(--primary-color);
+  }
+
+  .company {
+    font-size: 1.2rem;
+    font-weight: 600;
+  }
+
+  .role {
+    font-size: 1.1rem;
+    font-weight: 500;
+  }
+
+  .description {
+    font-size: 1rem;
+    padding-top: 10px;
+  }
+}

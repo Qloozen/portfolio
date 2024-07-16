@@ -1,0 +1,28 @@
+.container {
+  border-radius: 50%;
+  border: 3px solid var(--background-hover-color);
+  border-top-color: var(--primary-color);
+  display: inline-block;
+  animation: 1s spinner infinite linear;
+}
+
+.small {
+  width: 16px;
+  height: 16px;
+}
+
+.medium {
+  width: 24px;
+  height: 24px;
+}
+
+.large {
+  width: 32px;
+  height: 32px;
+}
+
+@keyframes spinner {
+  to {
+    transform: rotate(360deg);
+  }
+}

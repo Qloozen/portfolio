@@ -1,0 +1,34 @@
+{
+  "hero": {
+    "greeting": "Hallo daar!",
+    "greeting2": "Ik ben",
+    "contact": "Neem contact op"
+  },
+  "about": {
+    "about": "Over mij",
+    "usedFor": "Gebruikt voor"
+  },
+  "recentProjects": {
+    "recentProjects": "Recente projecten",
+    "allProjects": "Alle projecten"
+  },
+  "experience": {
+    "experience": "Ervaring"
+  },
+  "projectPage": {
+    "allProjects": "Alle projecten",
+    "lastUpdated": "Laatst bijgewerkt",
+    "technologies": "Technologieën",
+    "gallery": "Galerij"
+  },
+  "contact": {
+    "contactMe": "Neem contact met mij op",
+    "fullName": "Volledige naam",
+    "email": "E-mail",
+    "message": "Bericht",
+    "send": "Verstuur",
+    "minError": "Bericht moet minstens 10 karakter(s) bevatten",
+    "maxError": "Bericht mag maximaal 1000 karakter(s) bevatten",
+    "globalError": "Er is iets misgegaan, probeer het later opnieuw"
+  }
+}

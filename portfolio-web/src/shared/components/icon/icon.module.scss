@@ -1,0 +1,11 @@
+$icon-size: 24px;
+
+.container {
+  width: $icon-size;
+  height: $icon-size;
+
+  svg {
+    width: $icon-size;
+    height: $icon-size;
+  }
+}

@@ -1,0 +1,118 @@
+$font-size-sm: 14px;
+$font-size-md: 14px;
+$font-size-lg: 14px;
+$padding-sm: 4px 8px;
+$padding-md: 8px 16px;
+$padding-lg: 16px 32px;
+
+.container {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  border: none;
+  border-radius: 8px;
+  padding: $padding-md;
+  font-size: $font-size-md;
+  font-weight: 700;
+  color: var(--primary-color);
+  background: transparent;
+  cursor: pointer;
+  transition: all 0.3s;
+  text-decoration: none;
+
+  &:hover,
+  &:focus,
+  &:active {
+    background: var(--background-hover-color);
+    border-color: var(--primary-hover-color);
+  }
+
+  &:disabled {
+    pointer-events: none;
+    color: var(--font-disabled-color);
+  }
+}
+
+.medium {
+  padding: $padding-md;
+  font-size: $font-size-md;
+}
+
+.large {
+  padding: $padding-lg;
+  font-size: $font-size-lg;
+}
+
+.small {
+  padding: $padding-sm;
+  font-size: $font-size-sm;
+}
+
+.text {
+  color: var(--primary-color);
+}
+
+.filled,
+.circular-filled {
+  color: var(--primary-font-color);
+  background: var(--primary-color);
+  border: 2px solid var(--primary-color);
+
+  &:hover,
+  &:focus,
+  &:active {
+    background: var(--primary-hover-color);
+    border-color: var(--primary-hover-color);
+  }
+
+  &:disabled {
+    pointer-events: none;
+    background-color: var(--background-disabled-color);
+    border-color: var(--background-disabled-color);
+  }
+}
+
+.outlined.small {
+  border-width: 1px;
+}
+
+.outlined,
+.circular-outlined {
+  background: none;
+  border: 2px solid var(--primary-color);
+  color: var(--primary-color);
+
+  &:hover,
+  &:focus,
+  &:active {
+    background: none;
+    border-color: var(--primary-hover-color);
+    color: var(--primary-hover-color);
+  }
+
+  &:disabled {
+    pointer-events: none;
+    border-color: var(--background-disabled-color);
+  }
+}
+
+.circular-outlined,
+.circular-filled {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+}
+
+.circular-outlined.large,
+.circular-filled.large {
+  width: calc(var(--pcl-button-cicular-size) + 10px);
+  height: calc(var(--pcl-button-cicular-size) + 10px);
+}
+
+.circular-outlined.small,
+.circular-filled.small {
+  font-size: 12px;
+  width: 50px;
+  height: 50px;
+}

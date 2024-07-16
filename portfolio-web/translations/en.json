@@ -1,0 +1,34 @@
+{
+  "hero": {
+    "greeting": "Hey there!",
+    "greeting2": "I'm",
+    "contact": "Contact me"
+  },
+  "about": {
+    "about": "About me",
+    "usedFor": "Used for"
+  },
+  "recentProjects": {
+    "recentProjects": "Recent projects",
+    "allProjects": "All projects"
+  },
+  "experience": {
+    "experience": "Experience"
+  },
+  "projectPage": {
+    "allProjects": "All projects",
+    "lastUpdated": "Last updated",
+    "technologies": "Technologies",
+    "gallery": "Gallery"
+  },
+  "contact": {
+    "contactMe": "Contact me",
+    "fullName": "Full name",
+    "email": "E-mail",
+    "message": "Message",
+    "send": "Send",
+    "minError": "Message must contain at least 10 character(s)",
+    "maxError": "Message must contain at most 1000 character(s)",
+    "globalError": "Something went wrong, please try again later"
+  }
+}

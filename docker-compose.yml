@@ -1,14 +1,15 @@
-version: "3.8"
 services:
-  portfolio-website:
-    build: .
-    container_name: portfolio-website
-    restart: unless-stopped
-    pull_policy: build
-    environment:
-      VITE_EMAILJS_SERVICE_ID: ${VITE_EMAILJS_SERVICE_ID}
-      VITE_EMAILJS_TEMPLATE_ID: ${VITE_EMAILJS_TEMPLATE_ID}
-      VITE_EMAILJS_PUBLIC_KEY: ${VITE_EMAILJS_PUBLIC_KEY}
+  portfolio-cms:
+    extends:
+      file: ./portfolio-cms/docker-compose.yml
+      pull_policy: build
+      service: portfolio-cms
+
+  portfolio-web:
+    extends:
+      file: ./portfolio-web/docker-compose.yml
+      pull_policy: build
+      service: portfolio-web
 
 networks:
   default:

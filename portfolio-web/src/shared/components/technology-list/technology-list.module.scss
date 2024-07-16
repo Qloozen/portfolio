@@ -1,0 +1,35 @@
+.container {
+  max-width: 300px;
+
+  .titleSection {
+    display: flex;
+    padding: 8px 0;
+
+    p {
+      padding-left: 8px;
+    }
+
+    span {
+      color: var(--primary-color);
+    }
+  }
+
+  .list {
+    padding: 8px 0;
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
+    row-gap: 8px;
+
+    li {
+      background: var(--background-hover-color);
+      padding: 4px 8px;
+      border-radius: 10px;
+    }
+  }
+
+  .divider {
+    margin-top: 16px;
+  }
+}

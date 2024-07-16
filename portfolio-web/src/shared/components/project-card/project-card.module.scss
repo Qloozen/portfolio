@@ -1,0 +1,42 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 350px;
+  height: 450px;
+  gap: 8px;
+
+  .image {
+    border-radius: 5px;
+  }
+
+  .tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+
+  .yearTag,
+  .technologyTag {
+    font-weight: 500;
+    padding: 4px 8px;
+    border-radius: 8px;
+    font-size: 14px;
+  }
+
+  .yearTag {
+    background-color: var(--primary-color);
+    color: var(--primary-font-color);
+  }
+
+  .technologyTag {
+    background-color: var(--background-hover-color);
+  }
+
+  .description {
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+}
