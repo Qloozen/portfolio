@@ -4,5 +4,5 @@ services:
   portfolio-web:
     container_name: portfolio-web
     build:
-      context: ./
+      context: .
       dockerfile: Dockerfile
