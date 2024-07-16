@@ -1,15 +1,17 @@
-version: "3.8"
+version: "3.4"
 
 services:
   portfolio-cms:
     extends:
       file: ./portfolio-cms/docker-compose.yml
       service: portfolio-cms
+      pull_policy: build
 
   portfolio-web:
     extends:
       file: ./portfolio-web/docker-compose.yml
       service: portfolio-web
+      pull_policy: build
 
 networks:
   default:
