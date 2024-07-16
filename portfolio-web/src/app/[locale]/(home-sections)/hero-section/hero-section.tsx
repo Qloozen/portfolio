@@ -1,43 +1,60 @@
 import Image from 'next/image';
-import { BlockRendererClient, NavigationButton } from '@components';
+import { BlockRendererClient, MotionDiv, MotionH1, MotionP, NavigationButton } from '@components';
 
 import styles from './hero-section.module.scss';
 import { getTranslations } from 'next-intl/server';
 import { fetchHero } from './api';
+import { fadeLeft, fadeUp, scale, staggerContainer } from '@animations/variants';
 
 const HeroSection = async () => {
   const t = await getTranslations('hero');
-
   const hero = await fetchHero();
 
   return (
     <div className={styles.container}>
-      <div className={styles.descriptionSection}>
-        <p>{t('greeting')}</p>
-        <h1>
+      <MotionDiv
+        initial="hidden"
+        whileInView="show"
+        variants={staggerContainer}
+        className={styles.descriptionSection}
+      >
+        <MotionP variants={fadeUp}>{t('greeting')}</MotionP>
+        <MotionH1 variants={fadeUp}>
           {t('greeting2')} <span>Qiang Loozen</span>
-        </h1>
-
-        <BlockRendererClient content={hero.description} />
-
-        <NavigationButton
-          className={styles.contactButton}
-          href="/contact"
-          trailingIcon="arrow-right"
-          variant="filled"
-        >
-          {t('contact')}
-        </NavigationButton>
-      </div>
-      <div className={styles.imageSection}>
+        </MotionH1>
+        <MotionDiv variants={fadeUp}>
+          <BlockRendererClient content={hero.description} />
+        </MotionDiv>
+        <MotionDiv variants={fadeUp}>
+          <NavigationButton
+            className={styles.contactButton}
+            href="/contact"
+            trailingIcon="arrow-right"
+            variant="filled"
+          >
+            {t('contact')}
+          </NavigationButton>
+        </MotionDiv>
+      </MotionDiv>
+      <MotionDiv
+        initial="hidden"
+        whileInView="show"
+        variants={{ ...scale, show: { ...scale.show, transition: { delay: 0.5, duration: 0.5 } } }}
+        className={styles.imageSection}
+      >
         <Image
           src={hero.profile.url}
           alt="hero image"
           fill
           objectFit="contain"
         />
-      </div>
-      <div className={styles.socialSection}>
+      </MotionDiv>
+      <MotionDiv
+        initial="hidden"
+        whileInView="show"
+        variants={{ ...fadeLeft, show: { ...fadeLeft.show, transition: { delay: 0.5, duration: 0.5 } } }}
+        className={styles.socialSection}
+      >
         <NavigationButton
           target="_blank"
           href="https://github.com/Qloozen"
@@ -48,7 +65,7 @@ const HeroSection = async () => {
           href="https://www.linkedin.com/in/qiangloozen/"
           leadingIcon="linkedin"
         />
-      </div>
+      </MotionDiv>
     </div>
   );
 };

@@ -23,6 +23,11 @@ $nav-height: 60px;
 .logoSection {
   flex: 1;
 
+  .logoLink {
+    text-decoration: none;
+    color: var(--font-color);
+  }
+
   .menuToggle {
     display: none;
   }

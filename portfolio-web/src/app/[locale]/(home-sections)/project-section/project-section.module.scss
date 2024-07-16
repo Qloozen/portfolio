@@ -6,10 +6,9 @@
   justify-content: space-between;
   padding-top: 48px;
   gap: 32px;
+  min-height: 100vh;
 
   .content {
-    padding-top: 48px;
-
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;

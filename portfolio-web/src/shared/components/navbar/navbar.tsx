@@ -27,9 +27,16 @@ const Navbar = () => {
   return (
     <div className={styles.container}>
       <div className={styles.logoSection}>
-        <h1>
-          Qiang <span>Loozen</span>
-        </h1>
+        <Link
+          className={styles.logoLink}
+          href="/"
+          onClick={() => setIsMenuOpen(false)}
+        >
+          <h1>
+            Qiang <span>Loozen</span>
+          </h1>
+        </Link>
+
         <MenuToggle
           className={styles.menuToggle}
           isMenuOpen={isMenuOpen}
@@ -50,6 +57,7 @@ const Navbar = () => {
                 <Link
                   className={cx('navLink', { 'navLink--active': activePath === path.path })}
                   href={path.path}
+                  onClick={() => setIsMenuOpen(false)}
                 >
                   {path.name}
                 </Link>
