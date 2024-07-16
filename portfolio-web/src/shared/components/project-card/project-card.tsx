@@ -11,10 +11,9 @@ const ProjectCard = ({ project }: ProjectCardProps) => {
       <Image
         className={styles.image}
         src={project.thumbnail.url}
-        alt="dijd"
+        alt={project.thumbnail.alt}
         width={500}
         height={200}
-        objectFit="cover"
       />
       <h3>{project.name}</h3>
       <div className={styles.tags}>
