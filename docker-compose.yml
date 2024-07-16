@@ -5,11 +5,15 @@ services:
     extends:
       file: ./portfolio-cms/docker-compose.yml
       service: portfolio-cms
+    pull_policy: build
+    restart: always
 
   portfolio-web:
     extends:
       file: ./portfolio-web/docker-compose.yml
       service: portfolio-web
+    pull_policy: build
+    restart: always
 
 networks:
   default:
