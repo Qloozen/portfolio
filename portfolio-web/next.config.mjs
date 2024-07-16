@@ -12,8 +12,9 @@ const nextConfig = {
   //   return config;
   // },
   images: {
-    domains: ['localhost'],
+    domains: ['localhost', 'portfolio-cms.qloozen.nl'],
   },
+  output: 'standalone',
 };
 
 export default withNextIntl(nextConfig);
