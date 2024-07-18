@@ -12,7 +12,14 @@ export type Work = {
 
 export const workMapper = (json: any): Work => {
   const startDate = new Date(json.attributes.start);
-  const endDate = json.attributes.end ? new Date(json.attributes.end) : undefined;
+  const endDate = json.attributes.end ? new Date(json.attributes.end) : new Date();
+  let durationYears = endDate.getFullYear() - startDate.getFullYear();
+  let durationMonths = 1 + (endDate.getMonth() - startDate.getMonth());
+
+  if (durationMonths < 0) {
+    durationYears -= 1;
+    durationMonths += 12;
+  }
 
   return {
     id: json.id,
@@ -20,10 +27,8 @@ export const workMapper = (json: any): Work => {
     location: json.attributes.location,
     start: `${startDate.toLocaleString('default', { month: 'short' })}. ${startDate.getFullYear()}`,
     end: endDate ? `${endDate.toLocaleString('default', { month: 'short' })}. ${endDate.getFullYear()}` : 'Present',
-    durationYears: endDate
-      ? endDate.getFullYear() - startDate.getFullYear()
-      : new Date().getFullYear() - startDate.getFullYear(),
-    durationMonths: endDate ? endDate.getMonth() - startDate.getMonth() : new Date().getMonth() - startDate.getMonth(),
+    durationYears,
+    durationMonths,
     position: json.attributes.position,
     description: json.attributes.description,
   };
