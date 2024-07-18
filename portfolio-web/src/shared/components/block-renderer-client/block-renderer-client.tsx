@@ -5,21 +5,19 @@ import { BlocksRenderer, type BlocksContent } from '@strapi/blocks-react-rendere
 
 const BlockRendererClient = ({ content }: { readonly content: BlocksContent }) => {
   if (!content) return null;
+
   return (
     <BlocksRenderer
       content={content}
       blocks={{
-        image: ({ image }) => {
-          console.log(image);
-          return (
-            <Image
-              src={image.url}
-              width={image.width}
-              height={image.height}
-              alt={image.alternativeText || ''}
-            />
-          );
-        },
+        image: ({ image }) => (
+          <Image
+            src={image.url}
+            width={image.width}
+            height={image.height}
+            alt={image.alternativeText || ''}
+          />
+        ),
       }}
     />
   );

@@ -3,11 +3,9 @@
 import Image from 'next/image';
 import { PageContentProps } from './types';
 import styles from './page-content.module.scss';
-import classnames from 'classnames/bind';
-import { BlockRendererClient, MotionDiv } from '@components';
+import { BlockRendererClient } from '@components';
 import { useTranslations } from 'next-intl';
 import { motion, useScroll, useTransform } from 'framer-motion';
-const cx = classnames.bind(styles);
 
 const PageContent = ({
   project: { description, gallery, id, lastUpdated, name, projectType, status, technologies, thumbnail, githubUrl },

@@ -6,7 +6,6 @@ export const fetchProjects = async (): Promise<Project[]> => {
 
   const res = await fetch(`${process.env.NEXT_BASE_API_URL}/projects?populate=*&locale=${locale}`);
   const json = await res.json();
-  console.log(`${process.env.NEXT_BASE_API_URL}/projects?populate=*?locale=${locale}`);
 
   return projectListMapper(json);
 };

@@ -5,7 +5,6 @@ import { getMessages } from 'next-intl/server';
 import { Navbar } from '@components';
 import { ThemeProvider } from 'next-themes';
 
-import styles from './layout.module.scss';
 import '@styles/variables.scss';
 import '@styles/globals.scss';
 

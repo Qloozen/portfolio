@@ -1,9 +1,7 @@
 import ProjectCard from '@components/project-card/project-card';
 import styles from './page.module.scss';
-import classnames from 'classnames/bind';
 import { fetchProjects } from './api';
 import { getTranslations } from 'next-intl/server';
-const cx = classnames.bind(styles);
 
 const Page = async () => {
   const projects = await fetchProjects();

@@ -2,9 +2,8 @@ import SectionDivider from '@components/section-divider/section-divider';
 import styles from './experience-section.module.scss';
 import { fetchWork } from './api';
 import { getTranslations } from 'next-intl/server';
-import { IconButton, MotionDiv, NavigationButton } from '@components';
+import { MotionDiv } from '@components';
 import { fadeUp, staggerContainer } from '@animations/variants';
-import Link from 'next/link';
 
 const ExperienceSection = async () => {
   const work = await fetchWork();
