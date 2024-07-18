@@ -43,27 +43,6 @@
       "type": "string",
       "required": true
     },
-    "start": {
-      "pluginOptions": {
-        "i18n": {
-          "localized": false
-        }
-      },
-      "type": "integer",
-      "required": true,
-      "min": 2000,
-      "max": 2100
-    },
-    "end": {
-      "pluginOptions": {
-        "i18n": {
-          "localized": true
-        }
-      },
-      "min": 2000,
-      "type": "integer",
-      "max": 2100
-    },
     "location": {
       "pluginOptions": {
         "i18n": {
@@ -71,6 +50,24 @@
         }
       },
       "type": "string",
+      "required": true
+    },
+    "start": {
+      "pluginOptions": {
+        "i18n": {
+          "localized": false
+        }
+      },
+      "type": "date",
+      "required": true
+    },
+    "end": {
+      "pluginOptions": {
+        "i18n": {
+          "localized": false
+        }
+      },
+      "type": "date",
       "required": true
     }
   }

@@ -13,7 +13,9 @@
     "allProjects": "All projects"
   },
   "experience": {
-    "experience": "Experience"
+    "experience": "Experience",
+    "years": "yr",
+    "months": "mo"
   },
   "projectPage": {
     "allProjects": "All projects",

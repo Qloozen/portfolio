@@ -28,15 +28,16 @@ const ExperienceSection = async () => {
         variants={staggerContainer}
         className={styles.timeline}
       >
-        {work.map(({ company, id, description, location, position, start, end }) => (
+        {work.map(({ company, id, description, location, position, end, start, durationMonths, durationYears }) => (
           <MotionDiv
             key={id}
             className={styles.box}
             variants={fadeUp}
           >
             <div className={styles.content}>
-              <p className={styles.duration}>
-                {start} - {end ? end : 'Present'}
+              <p className={styles.time}>
+                {start} - {end} · {durationYears > 0 && `${durationYears} ${t('years')}, `}
+                {durationMonths} {t('months')}
               </p>
               <p className={styles.company}>
                 {company} - {location}

@@ -13,7 +13,9 @@
     "allProjects": "Alle projecten"
   },
   "experience": {
-    "experience": "Ervaring"
+    "experience": "Ervaring",
+    "years": "jr",
+    "months": "mnd"
   },
   "projectPage": {
     "allProjects": "Alle projecten",
