@@ -9,6 +9,11 @@
   .image {
     border-radius: 5px;
     object-fit: cover;
+    transition: transform 0.15s;
+
+    &:hover {
+      transform: scale(1.05);
+    }
   }
 
   .tags {

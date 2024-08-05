@@ -67,5 +67,11 @@
   .galleryImage {
     object-fit: cover;
     border-radius: 5px;
+    transition: transform 0.3s ease;
+
+    &:hover {
+      transform: scale(2);
+      transform-origin: bottom center;
+    }
   }
 }
